@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rooster_letcode/routes/routes.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -10,6 +11,23 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Insights"),
+      ),
+      body: Column(
+        children: [
+          GestureDetector(
+            onTap: () => {Navigator.pushNamed(context, AppRoutes.videos)},
+            child: Card(
+              child: Image.asset(
+                'assets/home/playwright.png',
+                height: 120,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
